@@ -6,7 +6,7 @@
     <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Instrument+Serif:ital@0;1&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,10 +19,20 @@
         }
 
         body {
-            background-color: white;
-            font-family: 'Instrument Serif', serif;
-            color: #000000;
-            line-height: 1.6;
+            background:
+                radial-gradient(ellipse 120% 60% at 0% 0%, #5c4420 0%, transparent 50%),
+                radial-gradient(ellipse 100% 50% at 30% 25%, #5a3318 0%, transparent 50%),
+                radial-gradient(ellipse 110% 55% at 60% 45%, #5c2020 0%, transparent 50%),
+                radial-gradient(ellipse 100% 50% at 85% 65%, #4e1a30 0%, transparent 50%),
+                radial-gradient(ellipse 120% 60% at 20% 80%, #5a3318 0%, transparent 50%),
+                radial-gradient(ellipse 100% 50% at 50% 100%, #5c4420 0%, transparent 50%),
+                #1a1210;
+            background-attachment: fixed;
+            font-family: 'Geist Mono', monospace;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            min-height: 100vh;
         }
 
         header {
@@ -30,35 +40,36 @@
             text-align: center;
             position: sticky;
             top: 0;
-            background-color: white;
+            background: #1a1210;
             z-index: 10;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #333;
         }
 
         nav a {
             margin: 0 15px;
-            color: #000000;
+            color: #d6c8b8;
             text-decoration: none;
         }
 
         nav a:hover {
             text-decoration: underline;
+            color: #d4a07a;
         }
 
         h1, h2, h3 {
-            font-family: 'Domine', serif;
+            font-family: 'Geist Mono', monospace;
             font-weight: 700;
-            color: #000000;
+            color: #efe8e0;
         }
 
         .about-text {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            color: #000000;
+            font-family: 'Geist Mono', monospace;
+            font-style: normal;
+            color: #d8d0c8;
         }
 
         a {
-            color: #000000;
+            color: #d4a07a;
         }
 
         /* Hero Split Section */
@@ -85,7 +96,7 @@
             flex: 1;
             padding-top: 20px;
             padding-left: 60px;
-            border-left: 1px solid #ccc;
+            border-left: 1px solid #444;
         }
 
         .hero-right h2 {
@@ -125,9 +136,9 @@
         }
 
         .project-links a {
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Geist Mono', monospace;
             font-size: 1.15em;
-            color: #000000;
+            color: #d6c8b8;
             text-decoration: none;
             padding-bottom: 2px;
             border-bottom: 1px solid transparent;
@@ -135,29 +146,62 @@
         }
 
         .project-links a:hover {
-            border-bottom-color: #000000;
+            border-bottom-color: #d4a07a;
+            color: #d4a07a;
         }
 
         .profile-photo {
             width: 200px;
             height: 200px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+            background-color: #2a2520;
+            border: 1px solid #444;
             margin-bottom: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
         }
 
         .about-blurb {
             max-width: 600px;
             margin-bottom: 35px;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Geist Mono', monospace;
             font-style: normal;
             line-height: 1.7;
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            font-family: 'Geist Mono', monospace;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: inline;
+            white-space: nowrap;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: #d4a07a;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typewriter-prefix {
+            color: #9a7a5a;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Geist Mono', monospace;
         }
 
         .about-detail {
@@ -169,60 +213,63 @@
         /* Section Dividers */
         .section-divider {
             border: none;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #333;
             margin: 0;
         }
 
-        /* Case Studies Section */
-        .section-case-studies {
+        /* Link Previews Section */
+        .section-previews {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 60px;
         }
 
-        .section-case-studies h1 {
+        .section-previews h1 {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .case-studies-grid {
+        .previews-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
-        .case-study-card {
-            border: 1px solid #eee;
+        .preview-card {
+            border: 1px solid #333;
             overflow: hidden;
             text-decoration: none;
-            color: #000000;
-            transition: box-shadow 0.2s;
+            color: #e0e0e0;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            background: rgba(40, 30, 25, 0.6);
+            border-radius: 4px;
         }
 
-        .case-study-card:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        .preview-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-color: #6a4a3a;
         }
 
-        .case-study-card img {
+        .preview-card img {
             width: 100%;
             height: 180px;
             object-fit: cover;
             display: block;
         }
 
-        .case-study-card .card-body {
+        .preview-card .card-body {
             padding: 20px;
         }
 
-        .case-study-card h3 {
+        .preview-card h3 {
             font-size: 0.95em;
             line-height: 1.4;
             margin-bottom: 8px;
         }
 
-        .case-study-card p {
+        .preview-card p {
             font-size: 0.85em;
-            color: #555;
+            color: #999;
         }
 
         /* Projects Detail Section */
@@ -240,7 +287,7 @@
         .project {
             margin-bottom: 50px;
             padding-bottom: 50px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #333;
         }
 
         .project:last-child {
@@ -276,23 +323,23 @@
         }
 
         .note {
-            background-color: #f9f9f9;
+            background-color: rgba(30, 40, 30, 0.6);
             padding: 15px;
             margin-bottom: 30px;
-            border-left: 3px solid #ccc;
+            border-left: 3px solid #6a4a3a;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #333;
             margin-top: 60px;
         }
 
         footer a {
             margin: 0 15px;
-            color: #000000;
+            color: #d4a07a;
             text-decoration: none;
         }
 
@@ -303,6 +350,104 @@
         footer p {
             margin-top: 15px;
             font-size: 0.9em;
+        }
+
+        /* Certifications */
+        .certifications {
+            margin-top: 35px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .certifications h2 {
+            margin-bottom: 15px;
+        }
+
+        .cert-list {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .cert-badge:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 16px rgba(212, 160, 122, 0.2);
+        }
+
+        .cert-badge img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            display: block;
+            border-radius: 6px;
+        }
+
+        /* CTF Section */
+        .ctf-section {
+            margin-top: 35px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .ctf-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .ctf-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ctf-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 16px 20px;
+            background: rgba(40, 30, 25, 0.5);
+            border: 1px solid #333;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .ctf-card:hover {
+            border-color: #6a4a3a;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .ctf-card-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .ctf-card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .ctf-card-info h3 {
+            font-size: 0.95em;
+            margin-bottom: 2px;
+        }
+
+        .ctf-card-info p {
+            font-size: 0.82em;
+            color: #999;
         }
 
         @media (max-width: 768px) {
@@ -320,7 +465,7 @@
             .hero-right {
                 border-left: none;
                 padding-left: 0;
-                border-top: 1px solid #ccc;
+                border-top: 1px solid #444;
                 padding-top: 40px;
             }
 
@@ -329,11 +474,11 @@
                 height: 150px;
             }
 
-            .case-studies-grid {
+            .previews-grid {
                 grid-template-columns: 1fr;
             }
 
-            .section-case-studies {
+            .section-previews {
                 padding: 40px 20px;
             }
 
@@ -352,55 +497,88 @@
     <header>
         <nav>
             <a href="#">About me</a>
-            
-            <a href="#projects">Projects</a>
-            <a href="#case-studies">Case Studies</a>
+            <a href="#writings">Writings & Research</a>
+            <a href="#projects">Other Projects</a>
             <a href="https://www.linkedin.com/in/surajvinaykumar/">Linkedin</a>
             <a href="mailto:srjvnkmr@gmail.com">Email</a>
         </nav>
     </header>
 
-    <!-- Hero: Left = Photo + About, Right = Project Links -->
+    <!-- Hero: Left = Photo + About, Right = Work Experience -->
     <div id="about" class="hero-split">
         <div class="hero-left">
             <div class="profile-photo">
                 <img src="lkdn.jpg" alt="Profile Photo" style="width: 130%; height: 130%; object-fit: cover; object-position: center 20%; filter: brightness(0.85) blur(0.2px);">
             </div>
 
-            <div class="about-blurb about-text">
-                <p>Hello there&#x1F44B;,I am Suraj, a product focused Master’s student in Engineering Technology at SJSU, currently based in San Francisco. 
-                    I use AI to design and build practical solutions that close the gap between user needs and technical execution.</p>
+            <div class="about-blurb">
+                <p><span class="typewriter-prefix">&gt; </span><span id="typewriter" class="typewriter"></span><span class="typewriter-cursor"></span></p>
             </div>
 
             <div class="about-detail">
                 <p class="about-text">
-                    I am a research driven product thinker who loves turning messy technical problems into clear useful outcomes for people. 
-                    I focus on understanding what users are struggling with through user research and data, then shaping a clear product direction 
-                    with goals that actually matter. I enjoy studying the market, looking at how others solve similar problems, and then designing 
-                    simple flows that non technical users can quickly understand. I have written PRDs, built prototypes, and worked closely with 
-                    engineers to make sure we are shipping real value, not just features.</p>
-                    <p>&nbsp;</p>
-                   <p>I also bring a solid technical background in networking, security and  AI automation, and AI solutions so I can talk in 
-                    detail with engineers while still keeping the user at the center. I have worked on projects that made threat detection 
-                    more accurate, helped analysts respond to issues faster, reduced debugging time for developers, and removed repetitive 
-                    manual work using AI and automation. </p>
-                    <p>&nbsp;</p>
-                    <p>In every project I try to be clear about the problem we are solving, how we will measure success, and what tradeoffs 
-                        we are making so that each decision reflects strong product sense and long term value.</p>
+                    My journey began with a simple, restless curiosity: the need to deconstruct the world to understand its logic. What started in childhood as a fascination with the internal circuits of a calculator has evolved into a career dedicated to securing the digital infrastructure that sustain our modern life. I have always believed that to truly protect a system, one must first respect the intricate "why" behind its design.
+                </p>
+                <p>&nbsp;</p>
+                <p class="about-text">
+                    What started as a fun hacking activity during Covid Lockdown inspired by movies, led me to my first job as Network Infra&Security in Brigade group, then working as a Software engineer in HPE Juniper Networks to Pursuing Master's in Engineering Technology, specialized in Applied Network systems, where I learnt about, Network security and auditing, cybersecurity and operations. etc.,
+                </p>
+                <p>&nbsp;</p>
+                <p class="about-text">
+                    It's not just about building secure networks; I am engineering trust into the digital fabric. My aspiration is to lead at the intersection of infrastructure and intelligence, ensuring that as our systems become more autonomous, they remain inherently secure and profoundly reliable.
+                </p>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications">
+                <h2>Certifications</h2>
+                <div class="cert-list">
+                    <a class="cert-badge" href="https://www.credly.com/badges/4ad3421a-17b2-493a-9c9c-f9e9bb25dde4/linked_in_profile" target="_blank" title="JNCIA - Juniper Networks Certified Internet Associate">
+                        <img src="Junos.webp" alt="JNCIA Certification">
+                    </a>
+                </div>
+            </div>
+
+            <!-- CTF -->
+            <div class="ctf-section">
+                <h2>CTF</h2>
+                <div class="ctf-cards">
+                    <a class="ctf-card" href="https://play.picoctf.org/users/surajvinaykumar" target="_blank">
+                        <div class="ctf-card-icon"><img src="picoCTF logo.webp" alt="picoCTF"></div>
+                        <div class="ctf-card-info">
+                            <h3>picoCTF</h3>
+                            <p class="about-text">surajvinaykumar &mdash; View profile on picoCTF</p>
+                        </div>
+                    </a>
+                    <a class="ctf-card" href="https://profile.hackthebox.com/profile/019d61fe-f0ec-73e1-bb70-57e4462ba5c1" target="_blank">
+                        <div class="ctf-card-icon"><img src="htb.webp" alt="Hack The Box"></div>
+                        <div class="ctf-card-info">
+                            <h3>Hack The Box</h3>
+                            <p class="about-text">View profile on Hack The Box</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div id="projects" class="hero-right">
-            <h2>Projects</h2>
-            <ul class="project-links">
-                <li><a href="#project-job-search">AI-Powered Job Search Automation</a></li>
-                <li><a href="#project-stratusai">StratusAI</a></li>
-                <li><a href="#project-anomaly-detector">Anomaly Detector</a></li>
-                <li><a href="#project-crisis-intel">Crisis Intelligence Web App</a></li>
-                <li><a href="#project-echoes-of-time">Echoes of Time</a></li>
-                <li><a href="#project-personal-accountant">Personal Accountant</a></li>
-                <li><a href="#project-resume-reviewer">Resume Reviewer</a></li>
-            </ul>
+        <div class="hero-right">
+            <div class="work-experience">
+                <h2>Education</h2>
+
+                <div class="job">
+                    <h3>San Jose State University</h3>
+                    <p class="job-period about-text">Master's in Engineering Technology &mdash; Specialized in Applied Network Systems</p>
+                    <p class="about-text">San Jose, California, United States</p>
+                    <p class="about-text">GPA &mdash; 3.7/4</p>
+                </div>
+
+                <div class="job">
+                    <h3>KLS Gogte Institute of Technology</h3>
+                    <p class="job-period about-text">Bachelor's in Engineering &mdash; Majoring in Electronics and Communications</p>
+                    <p class="about-text">Belgaum, Karnataka, India</p>
+                    <p class="about-text">GPA &mdash; 7.5/10</p>
+                </div>
+            </div>
 
             <div class="work-experience">
                 <h2>Work Experience</h2>
@@ -408,23 +586,21 @@
                 <div class="job">
                     <h3>HPE Juniper Networks</h3>
                     <p class="job-period about-text">Software Engineer - 2</p>
-                    <p class="about-text"> • Built robust testbed with RHOSP and 
-                        OpenStack for Contrail Cloud Native Routing, enabling 
-                        comprehensive containerized testing that improved product reliability by 25%.</p>
-                        <p>&nbsp;</p>
-                    </p> • Automated Python test cases and syslog backups for Juniper routers, reducing 
-                    manual testing effort by 30% and enhancing data security across production environments.</p>
+                    <p class="about-text"> &bull; Scaled network simulation capacity 10x from a 5-router to a 50+ node environment by virtualizing test infrastructure for Contrail Cloud Native Routing.</p>
+                    <p>&nbsp;</p>
+                    <p class="about-text"> &bull; Boosted test pass rates by 25% by implementing OpenStack, RHOSP testbeds and Kubernetes orchestration to increase environment stability.</p>
+                    <p>&nbsp;</p>
+                    <p class="about-text"> &bull; Reduced manual testing effort by 30% saving ~12 hours a week by automating 50+ Python test cases and streamlining syslog backup processes.</p>
                 </div>
 
                 <div class="job">
                     <h3>Brigade Group</h3>
                     <p class="job-period about-text">Network Infra & Security</p>
-                    <p class="about-text"> • Ensured 100% compliance across corporate 
-                    digital platforms by coordinating with cross-functional stakeholders (vendors and developers) 
-                    to mitigate security risks and prioritize vulnerability patches.</p>
+                    <p class="about-text"> &bull; Coordinated vendors, developers and leadership to prioritize vulnerability remediation and maintain 100% compliance across corporate digital platforms.</p>
                     <p>&nbsp;</p>
-                    <p>• Bridged the communication gap between business leadership and technical teams, translating 
-                        complex security requirements into clear, actionable development tasks to meet strategic business goals. </p>
+                    <p class="about-text"> &bull; Converted security requirements into development tasks and clear acceptance criteria, enabling timely delivery of fixes and reduced exposure windows.</p>
+                    <p>&nbsp;</p>
+                    <p class="about-text"> &bull; Conducted threat assessments and remediation validation using Burp Suite and manual testing to improve transparency between business and technical teams.</p>
                 </div>
             </div>
         </div>
@@ -432,32 +608,32 @@
 
     <hr class="section-divider">
 
-    <!-- Product Case Studies -->
-    <div id="case-studies" class="section-case-studies">
-        <h1>Product Case Studies</h1>
+    <!-- Writings & Research Previews -->
+    <div id="writings" class="section-previews">
+        <h1>Writings & Research</h1>
 
-        <div class="case-studies-grid">
-            <a class="case-study-card" href="https://substack.com/@surajvinaykumar/note/p-189096299?r=6rvwii&utm_source=notes-share-action&utm_medium=web" target="_blank">
-                <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3c7b2434-971a-404f-a977-9703fda0c29e_612x408.webp" alt="Instagram Reels Case Study">
+        <div class="previews-grid">
+            <a class="preview-card" href="https://substack.com/home/post/p-192702736" target="_blank">
+                <img src="https://substack-post-media.s3.amazonaws.com/public/images/728a3c65-973e-46df-888c-fedc39db01ad_600x338.webp" alt="Logs Don't Lie">
                 <div class="card-body">
-                    <h3>Detoxing Instagram Reels: Fighting 'Brainrot' with Product Sense</h3>
-                    <p class="about-text">Applying product management frameworks to Instagram Reels — analyzing cognitive fatigue and compulsive scrolling patterns.</p>
+                    <h3>Logs Don't Lie</h3>
+                    <p class="about-text">A hands-on cybersecurity lab documenting multi-stage breach simulation using Wazuh SIEM, Kali Linux, Hydra, and Netcat for threat detection.</p>
                 </div>
             </a>
 
-            <a class="case-study-card" href="https://substack.com/@surajvinaykumar/note/p-186037208?r=6rvwii&utm_source=notes-share-action&utm_medium=web" target="_blank">
-                <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd988485d-87ae-40da-b9c6-de618fe39f60_500x313.webp" alt="Spotify Case Study">
+            <a class="preview-card" href="https://substack.com/@surajvinaykumar/note/p-192587329?r=6rvwii&utm_source=notes-share-action&utm_medium=web" target="_blank">
+                <img src="https://substack-post-media.s3.amazonaws.com/public/images/a4b5444d-0a44-4898-b6d5-7106697bddc0_860x465.webp" alt="Undersea Cable Vulnerability">
                 <div class="card-body">
-                    <h3>The Audio OS: How Spotify Built a Perpetual Motion Machine</h3>
-                    <p class="about-text">Deconstructing Spotify's technological and psychological breakthrough combining engineering excellence with behavioral strategy.</p>
+                    <h3>The focus shouldn't just be on the oil. There are "deeper" problems</h3>
+                    <p class="about-text">Exploring the vulnerability of undersea fiber-optic cables and using AI and reinforcement learning to improve network resilience.</p>
                 </div>
             </a>
 
-            <a class="case-study-card" href="https://substack.com/@surajvinaykumar/note/p-185107000?r=6rvwii&utm_source=notes-share-action&utm_medium=web" target="_blank">
-                <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff79f846d-ab28-4f3f-9074-e96126f6470f_800x450.webp" alt="FitGirl Repack Case Study">
+            <a class="preview-card" href="https://drive.google.com/file/d/1eyyA5_gP6mzvG8tFEgUaJgsrHqkj1w1U/view?usp=sharing" target="_blank">
+                <img src="network_topology.png" alt="Reinforcement Learning–Driven Failure Resilience in OSPF Networks">
                 <div class="card-body">
-                    <h3>The Shadow Economy of Gaming: FitGirl Repack</h3>
-                    <p class="about-text">A product teardown of the logistics, reverse engineering, and efficiency war between studios and a decentralized piracy community.</p>
+                    <h3>Reinforcement Learning–Driven Failure Resilience in OSPF Networks</h3>
+                    <p class="about-text">Academic research report from Master's in Engineering Technology at SJSU.</p>
                 </div>
             </a>
         </div>
@@ -465,9 +641,9 @@
 
     <hr class="section-divider">
 
-    <!-- Project Details -->
-    <div id="project-details" class="section-projects">
-        <h1>Projects</h1>
+    <!-- Other Projects -->
+    <div id="projects" class="section-projects">
+        <h1>Other Projects</h1>
 
         <!-- AI-Powered Job Search Automation -->
         <div id="project-job-search" class="project">
@@ -501,193 +677,6 @@
                 <div class="video-embed">
                     <iframe src="https://www.youtube.com/embed/FRjycjhfAFc" title="AI-Powered Job Search Automation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            </section>
-        </div>
-
-        <!-- StratusAI -->
-        <div id="project-stratusai" class="project">
-            <h2>StratusAI</h2>
-
-            <section>
-                <h3>Description</h3>
-                <p class="about-text">
-                   StratusAI is a real time network threat detection product that I designed to turn raw packet data into clear, 
-                   actionable security signals for security teams. Many security and SIEM tools rely heavily on syslog data, 
-                   and after doing market research I realized that incorporating deep packet inspection can drastically increase 
-                   threat detection quality. StratusAI ingests live traffic, groups it into flows to cut down noise, and uses 
-                   TLS fingerprinting and anomaly detection to flag suspicious behavior such as scanning, beaconing, or data exfiltration, 
-                   shifting teams from reactive log chasing to proactive insight.
-                    <br><br>
-                    On top of this engine, I built a dashboard that focuses on fast sense making for security analysts. 
-                    The interface surfaces real time trends in bandwidth and anomaly levels, highlights critical alerts with context, 
-                    and visualizes traffic on a globe so analysts can quickly see where threats are coming from and where they are going. 
-                    Instead of exposing the underlying models and tooling, the product packages them into a simple experience that helps 
-                    users quickly answer three questions: what is happening right now, what is risky, and where should I act first.
-                    <br><br>
-                    This project is still in progress as I continue refining detection models and expanding dashboard features.
-                </p>
-            </section>
-
-            <section>
-                <h3>Technologies</h3>
-                <p class="about-text">Python (Scapy, Pandas, Torch, Watchdog), PyTorch for neural networks, JA3 for TLS fingerprinting</p>
-            </section>
-
-            <section>
-                <h3>Demo</h3>
-                <p class="about-text">
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/ZYBqNLbQEqM" title="StratusAI Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div> 
-                </p>
-               
-            </section>
-        </div>
-
-        <!-- Anomaly Detector -->
-        <div id="project-anomaly-detector" class="project">
-            <h2>Anomaly Detector</h2>
-
-            <section>
-                <h3>Description</h3>
-                <p class="about-text">
-                    Anomaly_Detector is a modern web application that leverages AI to analyze log files and detect anomalies in real-time,
-                    making complex system monitoring accessible to everyone. Built with React 18 and TypeScript, the platform is powered by
-                    Cisco's Foundation-Sec-8B model - an 8-billion parameter AI specifically trained on enterprise network data and security logs.
-                    <br><br>
-                    This foundation model understands network infrastructure patterns and can identify subtle anomalies that indicate security breaches,
-                    system failures, or performance issues, The application integrates Hugging Face Transformers to translate technical findings into
-                    human-readable explanations, essentially converting cryptic error codes into actionable insights that anyone can understand.
-                    <br><br>
-                    The platform supports multiple file formats including JSON, CSV, XML, Syslog, and plain text,
-                    processing them in real-time with sub-second results. Users simply drag and drop log files into the interface,
-                    where Cisco's AI analyzes the data for unusual patterns while Hugging Face models generate user-friendly explanations.
-                    All processing happens securely in memory without data storage.
-                </p>
-            </section>
-
-            <section>
-                <h3>Technologies</h3>
-                <p class="about-text">React + Typescript, Cisco's Foundation-Sec-8B model</p>
-            </section>
-
-            <section>
-                <h3>Links</h3>
-                <p class="about-text">
-                    <a href="https://anomaly-detector-lovat.vercel.app/">Live Demo</a> |
-                    <a href="https://github.com/Surajvinaykumar/AnomalyDetector/tree/main">GitHub Repository</a>
-                </p>
-            </section>
-        </div>
-
-        <!-- Personal Accountant -->
-        <div id="project-personal-accountant" class="project">
-            <h2>Personal Accountant</h2>
-
-            <section>
-                <h3>Description</h3>
-                <p class="about-text">
-                    I designed a lightweight personal expense tracking assistant that lives inside Telegram and behaves like a simple, 
-                    always available finance copilot. Instead of manually updating a spreadsheet, I can just message the bot with what I spent, 
-                    and the workflow parses the message, captures the amount, category, date, and optional notes, then logs everything into 
-                    Google Sheets in a structured way. The goal was to reduce friction in expense capture so that tracking becomes a natural 
-                    part of daily behavior, not a separate task I have to remember.
-                    <br><br>
-                    On the product side, I focused on making the experience feel smart but predictable. I integrated Google APIs so the system 
-                    updates in real time, iterated on prompts so the agent can respond in natural language and ask clarifying questions when 
-                    my input is vague, and added small quality of life features like automatically converting expenses from INR to USD using 
-                    the latest rates. The result is a simple but reliable workflow that turns a chat interface into a personal accountant, 
-                    and it has given me clear ideas on how similar agentic patterns can be used to automate other everyday tasks.
-                </p>
-            </section>
-
-            <section>
-                <h3>Technologies</h3>
-                <p class="about-text">n8n, Google Cloud APIs(sheets, drive), Telegram Bot</p>
-            </section>
-
-            <section>
-                <h3>Demo</h3>
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/YV-NvsHHRR8" title="Personal Accountant Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </section>
-
-            
-        </div>
-
-        <!-- Resume Reviewer -->
-        <div id="project-resume-reviewer" class="project">
-            <h2>Resume reviewer</h2>
-
-            <section>
-                <h3>Description</h3>
-                <p class="about-text">
-                    I wanted to build something that makes resume writing a little less overwhelming.
-                    The goal was to create a tool that feels more like a helpful assistant than a formal review process, 
-                    and it has been rewarding to see how quickly it can provide actionable insights to improve resumes.
-                    Many of us know the struggle of tailoring a resume for each job application,
-                    so I decided to create a Telegram bot that could review resumes in a simple, interactive way.
-                    The idea was to give users instant, role-specific feedback on their resumes without making the process feel heavy or complicated.
-                    <br><br>
-                    To make this work, I used n8n as the backbone of the workflow and connected it with OpenAI's GPT 4.1 mini for the analysis.
-                     The bot first checks whether you've uploaded a file or just text. If it's a file,
-                     the content gets extracted through the "Extract from file" node, then passed to the AI for role-based review.
-                     I also added a simple Memory node so the bot can handle longer context smoothly.
-                     Once the analysis is complete, the feedback is sent back instantly on Telegram, making the experience feel seamless.
-                        
-                </p>
-            </section>
-
-            <section>
-                <h3>Technologies</h3>
-                <p class="about-text">n8n, Telegram Bot</p>
-            </section>
-
-            <section>
-                <h3>Demo</h3>
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/ipmZ7476vMA" title="Resume Reviewer Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </section>
-
-            
-        </div>
-
-        <!-- Crisis Intelligence Web App -->
-        <div id="project-crisis-intel" class="project">
-            <h2>Crisis Intelligence Web App</h2>
-
-            <section>
-                <h3>Description</h3>
-                <p class="about-text">
-                    A real-time global natural events visualization tool leveraging NASA's EONET API to monitor wildfires,
-                    volcanoes, ice formations, and severe storms. The application displays this data on an interactive map
-                    for disaster awareness and research purposes.
-                    <br><br>
-                    Technical implementation utilizes Python with Streamlit for the interface and Folium for mapping.
-                    The system processes NASA EONET data through Pandas, stores it in SQLite, and employs a Logistic Regression
-                    model (scikit-learn) to assign priority scores to events based on predicted importance and risk levels.
-                </p>
-            </section>
-
-            <section>
-                <h3>Technologies</h3>
-                <p class="about-text">Python, SQLite, Scikit-learn, Streamlit Cloud, Joblib, Folium</p>
-            </section>
-
-            <section>
-                <h3>Links</h3>
-                <p class="about-text">
-                    <a href="https://surajvinaykumar-crisis-intel-app-9lux5a.streamlit.app/">Live Demo</a> |
-                    <a href="https://github.com/Surajvinaykumar/crisis_intel/tree/main">GitHub Repository</a>
-                </p>
-            </section>
-
-            <section>
-                <h3>Dashboard</h3>
-                <p>&nbsp;</p>
-                <img src="dashboard.png" alt="Crisis Intelligence Dashboard" style="max-width: 100%; height: auto; border-radius: 0;">
             </section>
         </div>
 
@@ -726,5 +715,20 @@
         <p class="about-text">Suraj Vinaykumar | srjvnkmr@gmail.com</p>
     </footer>
 
+    <script>
+        (function() {
+            const text = 'Suraj Vinaykumar';
+            const el = document.getElementById('typewriter');
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                }
+            }
+            type();
+        })();
+    </script>
 </body>
 </html>

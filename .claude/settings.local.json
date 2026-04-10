@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:substack.com)",
+      "WebFetch(domain:surajvinaykumar.github.io)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
